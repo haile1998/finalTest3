@@ -1,0 +1,30 @@
+<a class="nav-link" routerLink="/">Về trang chủ</a>
+<table class="table text-center">
+    <thead>
+        <tr class="text-center">
+            <td colspan="2">
+                <h2>Danh sách đọc</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form [formGroup]="form" (ngSubmit)="save()">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nhập tên sách"
+                            aria-label="Recipient's username" aria-describedby="button-addon2" formControlName="name">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Thêm</button>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of books">
+        <tr *ngIf="item.read == false">
+            <td>{{item.name}}</td>
+            <td><button class="btn btn-primary" (click)="update(item.id)">Đã đọc</button></td>
+        </tr>
+    </tbody>
+</table>
+<a class="nav-link" routerLink="/readed">Danh sách đã đọc</a>
