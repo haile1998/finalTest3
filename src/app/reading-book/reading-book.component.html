@@ -23,7 +23,7 @@
     <tbody *ngFor="let item of books">
         <tr *ngIf="item.read == false">
             <td>{{item.name}}</td>
-            <td><button class="btn btn-primary" (click)="update(item.id)">Đã đọc</button></td>
+            <td><button class="btn btn-primary" (click)="update(item)">Đã đọc</button></td>
         </tr>
     </tbody>
 </table>

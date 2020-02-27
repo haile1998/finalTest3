@@ -22,12 +22,13 @@ export class BookService {
     return this.httpClient.post<any>(this.url, book);
   }
 
-  update(id: number, name: string, read: boolean): Observable<any> {
+  update(id: number, name: string, read: string): Observable<any> {
     const book = {
       id,
       name,
       read
     };
+    console.log(book);
     return this.httpClient.put<any>(this.url, book);
   }
 

@@ -36,12 +36,9 @@ export class ReadingBookComponent implements OnInit {
     );
   }
 
-  update(id) {
-    this.bookService.getBook(id).subscribe(result => {
-      this.currentBook = result;
-      console.log(this.currentBook);
-    });
-    this.bookService.update(this.currentBook.id, this.currentBook.name, !this.currentBook.read).subscribe(
+  update(book: any) {
+    console.log(book);
+    this.bookService.update(book.id, book.name, 'true').subscribe(
       success => {
         alert('Đã đọc thành công');
         this.ngOnInit();
