@@ -3,14 +3,14 @@
     <thead>
         <tr class="text-center">
             <td colspan="2">
-                <h2>Danh sách đọc</h2>
+                <h1>Danh sách đã đọc</h1>
             </td>
         </tr>
     </thead>
     <tbody *ngFor="let item of books">
         <tr *ngIf="item.read == true">
             <td>{{item.name}}</td>
-            <td><button class="btn btn-primary">Đã đọc</button></td>
+            <td><button class="btn btn-warning" (click)="update(item)">Đọc lại</button></td>
         </tr>
     </tbody>
 </table>

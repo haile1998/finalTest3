@@ -28,6 +28,7 @@ export class ReadingBookComponent implements OnInit {
     this.bookService.save(name, false).subscribe(
       success => {
         alert('Thêm thành công!!');
+        this.form.reset();
         this.ngOnInit();
       },
       error => {

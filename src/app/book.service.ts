@@ -31,8 +31,4 @@ export class BookService {
     console.log(book);
     return this.httpClient.put<any>(this.url, book);
   }
-
-  getBook(id: number): Observable<any> {
-    return this.httpClient.get<any>(this.url + '/' + id);
-  }
 }

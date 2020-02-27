@@ -15,4 +15,17 @@ export class ReadedBookComponent implements OnInit {
     this.bookService.findAll().subscribe(result => { this.books = result; });
   }
 
+  update(book: any) {
+    console.log(book);
+    this.bookService.update(book.id, book.name, 'false').subscribe(
+      success => {
+        alert('Đọc lại thành công');
+        this.ngOnInit();
+      },
+      error => {
+        alert('Đọc lại thất bại');
+      }
+    );
+  }
+
 }
